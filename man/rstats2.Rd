@@ -7,7 +7,7 @@
 
 \description{
 The \code{rstats2} function computes the ordinary ridge related statistics such as \eqn{Ck}{ck}, \eqn{\sigma^2}{\sigma^2}, ridge degrees of freedom, effective degrees of freedom (EDF), and prediction residual error
-sum of squares PRESS statistics for scalar or vector value of biasing parameter \eqn{K}{K}.}
+sum of squares PRESS statistics for scalar or vector value of biasing parameter \eqn{K}{K} (see Allen, 1974; Lee, 1979; Hoerl and Kennard, 1970).}
 
 \usage{
    rstats2(x, \dots)
@@ -46,16 +46,18 @@ Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of
 
 Hastie, T. and Tibshirani, R. (1990). \emph{Generalized Additive Models}. Chapman & Hall.
 
-Hoerl, A.E., Kennard, R.W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308--323.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308--323.
 
-Hoerl, A.E. and Kennard, R.W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55--67.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55--67.
+
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 
 Kalivas, J. H., and Palmer, J. (2014). Characterizing Multivariate Calibration Tradeoffs (Bias, Variance, Selectivity, and Sensitivity) to Select Model Tuning Parameters. \emph{Journal of Chemometrics}, \strong{28}(5), 347--357.
 
-Lee, W.F. (1979). Model Estimation Using Ridge Regression with the Variane Normalization Criterion. \emph{Master thesis, Department of Educational Foundation Memorial University of Newfoundland.}
+Lee, W. F. (1979). Model Estimation Using Ridge Regression with the Variane Normalization Criterion. \emph{Master thesis, Department of Educational Foundation Memorial University of Newfoundland.}
 }
 
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{Ridge related statistics \code{\link{rstats1}}, ridge model fitting \code{\link{lmridge}}}
 

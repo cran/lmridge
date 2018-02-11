@@ -24,23 +24,23 @@ Allen, D. M. (1971). Mean Square Error of Prediction as a Criterion for Selectin
 
 Allen, D. M. (1974). The Relationship between Variable Selection and Data Augmentation and Method for Prediction. \emph{Technometrics}, \strong{16}, 125-127.
 
-Hoerl, A.E. and Kennard, R.W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
 
-Hoerl, A.E., Kennard, R.W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
 Berk, R. (2008). \emph{Statistical Learning from a Regression Perspective.} Springer.
+
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }
 
-\author{
-Muhammad Imdadullah, Dr. Muhammad Aslam}
-
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{
 The ridge model fitting \code{\link{lmridge}}, ridge CV and GCV plots \code{\link{cv.plot}}, variance bias trade-off plot \code{\link{bias.plot}}, m-scale and isrm plots \code{\link{isrm.plot}}, ridge AIC and BIC plots \code{\link{info.plot}}, ridge and VIF trace \code{\link{plot.lmridge}} }
 
 \examples{
-mod <- lmridge(y~., as.data.frame(Hald), K=seq(0, 0.5, 0.001))
+mod <- lmridge(y~., as.data.frame(Hald), K = seq(0, 0.2, 0.005))
 rplots.plot(mod)
-rplots.plot(mod, abline=FALSE)
+rplots.plot(mod, abline = FALSE)
 }
 
 \keyword{PRESS}

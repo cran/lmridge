@@ -4,7 +4,7 @@
 
 \title{Variance Inflation Fator for Linear Ridge Regression}
 
-\description{Computes VIF values for each scalar or vector value of biasing parameter \eqn{K}{K}.}
+\description{Computes VIF values for each scalar or vector value of biasing parameter \eqn{K}{K} (Marquardt, 1970).}
 
 \usage{vif(x, \dots)
 \method{vif}{lmridge}(x, \dots)
@@ -26,17 +26,19 @@ The \code{vif} function returns a matrix of VIF values for each regressor after 
 \references{
 Fox, J. and Monette, G. (1992). Generalized Collinearity Diagnostics. \emph{JASA}, \strong{87}, 178--183.
 
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
+
 Marquardt, D. (1970). Generalized Inverses, Ridge Regression, Biased Linear Estimation, and Nonlinear Estimation. \emph{Technometrics}, \strong{12}(3), 591--612.
 
 }
 
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{The ridge model fitting \code{\link{lmridge}}, ridge Var-Cov matrix \code{\link{vcov}} }
 
 \examples{
 data(Hald)
-mod <- lmridge(y~., data=as.data.frame(Hald), scaling="sc", K=seq(0,1,.2) )
+mod <- lmridge(y~., data = as.data.frame(Hald), scaling = "sc", K = seq(0,1,.2) )
 vif(mod)
 }
 

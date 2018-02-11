@@ -5,13 +5,23 @@ isrm.plot <- function(x, ...) {
   m <- rstats2(x)$m
 
   par(
-    mfrow = c(2,1), pty = "m", mai = c(.7,.8,.3,.3),mgp = c(1.9,1,0), mar =
-      c(3,3,3,2), oma = c(0,0,3,0)
+    mfrow = c(2,1),
+    pty = "m",
+    mai = c(.7,.8,.3,.3),
+    mgp = c(1.9,1,0),
+    mar = c(3,3,3,2),
+    oma = c(0,0,3,0)
   )
 
-  plot(
-    x$K, m, main = "m-scale vs K", xlab = "K", ylab = "m scale", lwd = 2, type =
-      'l'
+  matplot(
+#    y=t(x$coef),
+    y=x$K,
+    x=m,
+    main = "m-scale vs K",
+    xlab = "K",
+    ylab = "m scale",
+    lwd = 2,
+    type = 'l'
   )
   # if (abline) {
   #   abline(v = x$K[which.min(m)], lty = 2)
@@ -20,8 +30,13 @@ isrm.plot <- function(x, ...) {
   # }
 
   plot(
-    x$K, isrm, main = "ISRM vs K", xlab = "K", ylab = "ISRM", lwd = 2, type =
-      'l'
+    x$K,
+    isrm,
+    main = "ISRM vs K",
+    xlab = "K",
+    ylab = "ISRM",
+    lwd = 2,
+    type = 'l'
   )
 #   if (abline) {
 # #    abline(v = x$K[which.min(isrm)], lty = 2)
@@ -29,7 +44,11 @@ isrm.plot <- function(x, ...) {
 #            "blue", pos = 4)
 #   }
   mtext(
-    "m scale and ISRM", outer = TRUE, side = 3, cex = 1.8, line = 1
+    "m scale and ISRM",
+    outer = TRUE,
+    side = 3,
+    cex = 1.8,
+    line = 1
   )
   par(par(no.readonly = TRUE))
 }

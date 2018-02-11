@@ -52,7 +52,6 @@ print.klmridge <- function(x,...) {
     "Mansson et al. 2012 (KMN12): ",
     "Dorugade et al. 2010: ",
     "Dorugade et al. 2014: "
-
   )
   #print(t(krest),...)
 

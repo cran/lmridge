@@ -21,25 +21,27 @@ Plot of VIF values (VIF trace) and ridge coefficients (ridge trace) for scalar o
 \value{Nothing}
 
 \references{
-Hoerl, A.E. and Kennard, R.W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
 
-Hoerl, A.E., Kennard, R.W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }
 
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{The ridge model fitting \code{\link{lmridge}}, ridge CV and GCV plots \code{\link{cv.plot}}, variance bias trade-off plot \code{\link{bias.plot}}, m-scale and isrm plots \code{\link{isrm.plot}}, ridge AIC and BIC plots \code{\link{info.plot}}, miscellaneous ridge plots \code{\link{rplots.plot}} }
 
 \examples{
-mod<-lmridge(y~., as.data.frame(Hald), K=seq(0,0.5, 0.001))
+mod <- lmridge(y~., as.data.frame(Hald), K = seq(0, 0.15, 0.002))
 ## Ridge trace
 plot(mod)
-plot(mod, type="ridge")
+plot(mod, type = "ridge")
 
 ## VIF trace
-plot(mod, type="vif")
+plot(mod, type = "vif")
 ## Ridge trace without abline
-plot(mod, type="ridge", abline=FALSE)
+plot(mod, type = "ridge", abline = FALSE)
 }
 
 \keyword{ VIF trace }

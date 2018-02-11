@@ -5,7 +5,7 @@
 \title{Ridge Regression: Hat Matrix}
 
 \description{
-The \code{hatr} function computes hat matrix..}
+The \code{hatr} function computes hat matrix (see Hastie and Tibshirani, 1990).}
 
 \usage{
 hatr(x, \dots)
@@ -28,18 +28,20 @@ returns a list of matrix for each biasing parameter \eqn{K}{K}:
 Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:1205.0686v1 [stat.AP]}.
 
 Hastie, T. and Tibshirani, R. (1990). \emph{Generalized Additive Models}. Chapman \& Hall.
+
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }
 
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{The ridge model fitting \code{\link{lmridge}}, ridge Var-Cov matrix \code{\link{vcov.lmridge}}}
 
 \examples{
-mod<-lmridge(y~., as.data.frame(Hald), K=c(0, 0.1, 0.2, 0.3))
+mod <- lmridge(y~., as.data.frame(Hald), K = c(0, 0.1, 0.2, 0.3))
 ## Hat matrix for each biasing parameter
 hatr(mod)
 
-## Hat matrix for first biasing parameter i.e. K=0.1
+## Hat matrix for first biasing parameter i.e. K = 0.1
 hatr(mod)[[2]]
 }
 

@@ -5,7 +5,7 @@
 \title{Predicted Residual Sum of Squares}
 
 \description{
-The \code{press.lmridge} function computes predicted residual sum of squares (PRESS).}
+The \code{press.lmridge} function computes predicted residual sum of squares (PRESS) (see Allen, 1971).}
 
 \usage{press(object, \dots)
 \method{press}{lmridge}(object, \dots)
@@ -29,19 +29,21 @@ Allen, D. M. (1971). Mean Square Error of Prediction as a Criterion for Selectin
 
 Allen, D. M. (1974). The Relationship between Variable Selection and Data Augmentation and Method for Prediction. \emph{Technometrics}, \strong{16}, 125-127.
 
-Hoerl, A.E. and Kennard, R.W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
 
-Hoerl, A.E., Kennard, R.W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }
 
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{
 The ridge model fitting \code{\link{lmridge}}, ridge residual \code{\link{residuals}}, ridge predicted value \code{\link{predict}}
 }
 
 \examples{
-mod<-lmridge(y~.,as.data.frame(Hald), K=seq(0,0.5, 0.02))
+mod <- lmridge(y~., as.data.frame(Hald), K = seq(0, 0.5, 0.04))
 press(mod)
 }
 

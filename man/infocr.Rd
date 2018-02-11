@@ -5,7 +5,7 @@
 \title{Model Selection Criteria for Ridge Regression}
 
 \description{
-The \code{infocr.lmridge} function computes model information selection criteria (AIC and BIC).
+The \code{infocr.lmridge} function computes model information selection criteria (AIC and BIC), see Akaike, 1974; Imdad, 2017 and Schwarz, 1978).
 }
 
 \usage{
@@ -25,15 +25,17 @@ infocr(object, \dots)
 \references{
 Akaike, H. (1974). A new look at the Statistical Model Identification. \emph{IEEE Transaction on Automatic Control}, \strong{9}(6), 716-723.
 
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
+
 Schwarz, G. (1978). Estimating the Dimension of a Model. \emph{Annals of Statistics}, \strong{6}(2), 461--464.
 }
 
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{the ridge model fitting \code{\link{lmridge}}, ridge AIC and BIC plot \code{\link{info.plot}}}
 
 \examples{
-mod<-lmridge(y~.,as.data.frame(Hald), K=seq(0, .2, 0.001))
+mod <- lmridge(y~., as.data.frame(Hald), K = seq(0, .2, 0.001))
 infocr(mod)
 
 ## Vector of AIC values

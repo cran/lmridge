@@ -48,10 +48,7 @@ The function returns the list of following biasing parameter methods proposed by
   \item{KM11}{By Muniz \emph{et al.} (2012), \eqn{[\prod(\sqrt{\frac{\lambda_{max}\hat{\sigma}^2}{(n-p) \hat{\sigma}^2+\lambda_{max}\hat{\alpha}^2_j}})^{\frac{1}{p}}}{[\prod (\sqrt{(\lambda_{max}\hat{\sigma}^2)/((n-p)\hat{\sigma}^2)+\lambda_{max}\hat{\alpha}^2_j})]^(1/p)}}
   \item{KM12}{By Muniz \emph{et al.}, \eqn{Median[\frac{1}{\sqrt{\frac{\lambda_{max}\hat{\sigma}^2}{(n-p)\hat{\sigma}^2+\lambda_{max}\hat{\alpha}^2_j}}}]}{Median[(1)/(\sqrt{(\lambda_{max}\hat{\sigma}^2)/((n-p)\hat{\sigma}^2)+\lambda_{max}\hat{\alpha}^2_j})]}}
   \item{KD}{By Dorugade and Kashid (2012), \eqn{0, \frac{p\hat{\sigma}^2}{\hat{\alpha}'\hat{\alpha}}-\frac{1}{n(VIF_j)_{max}}}{max[0, (p\hat{\sigma}^2)/(\hat{\alpha}'\hat{\alpha})-(1)/(n(VIF_j)_{max})]}}
-
 \item{KAD4}{By Dorugade and Kashid (2012), \eqn{HM[\frac{2p}{\lambda_{max}} \sum(\frac{\hat{\sigma}^2}{\hat{\alpha}^2_j})]}{HM[2p/\lambda_{max}\sum(\hat{\sigma}^2 / \hat{\alpha}^2_j)]}}
-
-
   \item{alphahat}{The OLS estimator in canonical form, i.e., \eqn{\hat{\alpha}=(P'X'XP)^{-1}X'^*y}{\hat{\alpha}=(P'X'XP)^{-1}X'^*y}, where \eqn{X^*=XP}{X^*=XP} \eqn{P}{P} is eigenvector of \eqn{X'X}{X'X}.}
   %\item{P}{ \eqn{P} is eigenvector of \eqn{X'X}}
   %\item{xstar}{}
@@ -62,9 +59,11 @@ Dorugade, A. and Kashid, D. (2010). Alternative Method for Choosing Ridge Parame
 
 Dorugade, A. (2014). New Ridge Parameters for Ridge Regression. \emph{Journal of the Association of Arab Universities for Basic and Applied Sciences}, \strong{15}, 94-99.
 
-Hoerl, A.E., Kennard, R.W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
 
-Hoerl, A.E. and Kennard, R.W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
+
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 
 Kibria, B. (2003). Performance of Some New Ridge Regression Estimators. \emph{Communications in Statistics-Simulation and Computation}, \strong{32}(2), 491-435.
 
@@ -76,15 +75,15 @@ Muniz, G., Kibria, B., Mansson, K., and Shukur, G. (2012). On developing Ridge R
 
 Thisted, R. A. (1976). Ridge Regression, Minimax Estimation and Empirical Bayes Methods. \emph{Technical Report 28, Division of Biostatistics}, Stanford University, California.
 
-Venables, W.N. and Ripley, B.D. (2002). \emph{Modern Applied Statistics with S}. Springer New York, 4th edition, ISBN 0-387-95457-0.
+Venables, W. N. and Ripley, B. D. (2002). \emph{Modern Applied Statistics with S}. Springer New York, 4th edition, ISBN 0-387-95457-0.
 
 }
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{The ridge model fitting \code{\link{lmridge}}, Ridge Var-Cov matrix \code{\link{vcov}}}
 
 \examples{
-mod <- lmridge(y~., as.data.frame(Hald), K=seq(0, 0.2, 0.001))
+mod <- lmridge(y~., as.data.frame(Hald), K = seq(0, 0.2, 0.001))
 kest(mod)
 
 ## GCV values

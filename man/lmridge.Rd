@@ -53,20 +53,22 @@ lmridgeEst(formula, data, K=0, scaling=c("sc", "scaled", "centered"), \dots)
 }
 
 \references{
-Hoerl, A.E., Kennard, R.W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
 
-Hoerl, A.E. and Kennard, R.W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
+
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }
 
 \note{The function at the current form cannot handle missing values. The user has to take prior action with missing values before using this function.}
 
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{Testing of ridge coefficient \code{\link{summary.lmridge}}}
 
 \examples{
 data(Hald)
-mod<-lmridge(y~X1+X2+X3+X4, data=as.data.frame(Hald), K=seq(0, 0.1, 0.01), scaling="sc")
+mod <- lmridge(y~., data = as.data.frame(Hald), K = seq(0, 0.1, 0.01), scaling = "sc")
 ## Scaled Coefficients
 mod$coef
 
@@ -101,7 +103,7 @@ rstats1(mod)
 rstats2(mod)
 
 ## list of objects from lmridgeEst function
-lmridgeEst(y~X1+X2+X3+X4, data=as.data.frame(Hald), K=seq(0, 0.1, 0.01), scaling="sc")
+lmridgeEst(y~., data = as.data.frame(Hald), K = seq(0, 0.1, 0.01), scaling = "sc")
 }
 
 \keyword{Ridge Regression}

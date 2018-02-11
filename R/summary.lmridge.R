@@ -3,7 +3,9 @@ summary.lmridge <- function(object, ...) {
   res$call <- object$call
   res$K <- object$K
   y <- object$y
-#  n <- nrow(object$xs)
+  ym <- mean(object$mf[,1])
+  n <- nrow(object$xs)
+  xm<-object$xm
   #p<-ncol(object$xs)
 
   #   svdx<-svd(object$xs)
@@ -39,12 +41,12 @@ summary.lmridge <- function(object, ...) {
   #seb0<-sqrt(1/n * var(y) + diag(vcov(object)[[1]])%*%object$xm)
 
 
-  b0 <- mean(object$mf[,1]) - colSums(rcoefs * object$xm)
+  b0 <- ym - colSums(rcoefs * xm)
   seb0<-numeric(length(res$K))
   for (i in seq(length(res$K))) {
    # seb0<-(1/(object$n)*var(object$y)+sum(1/(object$n)*object$coef[,i]^2)) # standard Error of beta0
     #seb0[i]<-sqrt(1/n*var(y) + 1/n*sum(diag(vcov(object)[[i]])%*%object$xscale))
-    seb0[i]<-sqrt(var(y)+sum(cbind(1,object$mf[,-1]))+sum(diag(vcov(object)[[i]])))
+    seb0[i]<-sqrt(var(y)/n+ (object$xm^2)%*%(diag(vcov(object)[[i]])))
     #seb0[i]<-sqrt(t(object$coef[,i]) %*%vcov(object)[[i]]%*%object$coef[,i])
     summary <- vector("list")
     #    if(object$lambda[[i]]!=0){
@@ -52,7 +54,7 @@ summary.lmridge <- function(object, ...) {
     if (object$Inter) {
       summary$coefficients <-
         cbind(coefs[i,], c(b0[i], rcoefs[,i]), c(seb0[i], SE[,i]),
-              c(b0[i] / seb0[i], tstats[,i]), c(2*(1-pnorm(abs(seb0[i]))), pvalue[,i]))
+              c(b0[i] / seb0[i], tstats[,i]), c(2*(1-pnorm(abs(b0[i]/seb0[i]))), pvalue[,i]))
 
       colnames(summary$coefficients) <-
         c("Estimate", "Estimate (Sc)", "StdErr (Sc)", "t-value (Sc)", "Pr(>|t|)")

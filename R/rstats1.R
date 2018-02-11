@@ -64,7 +64,6 @@ rstats1.lmridge <- function(x,...) {
   rownames(mser) <- paste("K=", K, sep = "")
   colnames(mser) <- c("MSE")
 
-  #***********have to check it *************** have to discuss
   Fv <- lapply(1:length(K), function(i, b, v) {
     1 / p * (t(b[,i]) %*% solve(v[[i]]) %*% b[,i])
   }, b = coef, v = vcov(x))
@@ -101,8 +100,15 @@ rstats1.lmridge <- function(x,...) {
 
   mses <-
     list(
-      var = var, bias2 = bias2, mse = mser, Fv = Fv, R2 = R2r, rsigma2=rsigma2,
-      adjR2 = adjR2r,eigval = eigval, CN = CN
+      var = var,
+      bias2 = bias2,
+      mse = mser,
+      Fv = Fv,
+      R2 = R2r,
+      rsigma2=rsigma2,
+      adjR2 = adjR2r,
+      eigval = eigval,
+      CN = CN
     )
 
   class(mses) <- "rstats1"

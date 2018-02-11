@@ -12,7 +12,7 @@ rstats2.lmridge <- function(x,...) {
   dfridge <- as.vector(lapply(hatr(x), function(x) {
     sum(diag(x))
   }))
-  dfridge <- do.call(rbind,dfridge)
+  dfridge <- do.call(rbind, dfridge)
   rownames(dfridge) <- paste("K=", K,sep = "")
   colnames(dfridge) <- c("df ridge")
 
@@ -59,7 +59,7 @@ rstats2.lmridge <- function(x,...) {
       eigval / (eigval + rep(lam,each = p))
     })
 
-  ISRM <- lapply(1:length(K), function(i,num, denum) {
+    ISRM <- lapply(1:length(K), function(i,num, denum) {
     sum(((p * num[[i]] ^ 2) / sum(denum[[i]] %*% eigval) - 1) ^ 2)
   }, num = rfact_isrm, denum = rvarcal)
   ISRM <- do.call(rbind, ISRM)

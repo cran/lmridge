@@ -20,7 +20,7 @@ kest.lmridge <- function(object,...) {
 
   ls <- lm.fit(x,y)$coefficients  # ls coefficients for scaled data
   lsfit <-
-    lm.fit(x,y)$fitted.values # ls fitted values for scaled data
+  lm.fit(x,y)$fitted.values # ls fitted values for scaled data
 
   sigma2 <- sum(lm.fit(x,y)$residuals ^ 2) / (n - p)
 
@@ -36,9 +36,7 @@ kest.lmridge <- function(object,...) {
   CV <- matrix(0, 1, length(K))
 
   for (i in seq(length(K))) {
-    GCV[,i] <-
-      colSums((y - x %*% (coef[,i])) ^ 2) / (n - colSums(matrix(d ^ 2 / div[[i]], p))) ^
-      2
+    GCV[,i]<-colSums((y-x%*%(coef[,i]))^2)/(n-colSums(matrix(d^2/div[[i]],p)))^2
   }
 
   if (length(GCV) > 0) {
@@ -72,35 +70,22 @@ kest.lmridge <- function(object,...) {
   KMNdenom2 <- (n - p) * sigma2 + max(EV) * alphahat ^ 2
   KMNdenom1 <- max(EV) * sigma2
 
-  KMN8 <-
-    max(1 / (sqrt(KMNdenom1 / KMNdenom2)))          #Muniz et al 2012
-  KMN9 <-
-    max(sqrt(KMNdenom1 / KMNdenom2))            #Muniz et al 2012
-  KMN10 <-
-    (prod((1 / sqrt(
-      KMNdenom1 / KMNdenom2
-    )))) ^ (1 / p)   #Muniz et al 2012
-  KMN11 <-
-    (prod((sqrt(
-      KMNdenom1 / KMNdenom2
-    )))) ^ (1 / p)  #Muniz et al 2012
-  KMN12 <-
-    median(1 / sqrt(KMNdenom1 / KMNdenom2))           #Muniz et al 2012
+  KMN8 <-   max(1 / (sqrt(KMNdenom1 / KMNdenom2)))          #Muniz et al 2012
+  KMN9 <-   max(sqrt(KMNdenom1 / KMNdenom2))            #Muniz et al 2012
+  KMN10 <- (prod((1 / sqrt(KMNdenom1 / KMNdenom2 )))) ^ (1 / p)   #Muniz et al 2012
+  KMN11 <- (prod((sqrt(KMNdenom1 / KMNdenom2)))) ^ (1 / p)  #Muniz et al 2012
+  KMN12 <-  median(1 / sqrt(KMNdenom1 / KMNdenom2))           #Muniz et al 2012
 
-  KD <-
-    max(cbind(0,HKB - 1 / n * max(vif(object))))               #Dorugae et al 2010
+  KD <- max(cbind(0,HKB - 1 / n * max(vif(object))))               #Dorugae et al 2010
   KAD4 <- min(0, (2 * p / max(EV)) * sum(sigma2 / alphahat ^ 2))
 
-
-  kesti <-
-    list(
-      mHKB = mHKB, LW = LW, LW76 = Lw1976, CV = CV, kCV = kCV, HKB = HKB, KibAM =
-        KibAM,
-      kGCV = kGCV, DSk = DSk,GCV = GCV,#ls=ls,
-      KibGM = KibGM, KibMED = KibMED, KM2 = KM2, KM3 = KM3, KM4 =
-        KM4, KM5 = KM5, KM6 = KM6,
-      KMN8 = KMN8, KMN9 = KMN9,KMN10 = KMN10, KMN11 = KMN11, KMN12 =
-        KMN12, KD = KD, KAD4 = KAD4,alphahat=alphahat)#,P=P,xstar=xstar, EV=EV)
+  kesti <- list(mHKB = mHKB, LW = LW, LW76 = Lw1976, CV = CV, kCV = kCV,
+                HKB = HKB, KibAM =KibAM, kGCV = kGCV, DSk = DSk,GCV = GCV,#ls=ls,
+                KibGM = KibGM, KibMED = KibMED, KM2 = KM2, KM3 = KM3, KM4 = KM4,
+                KM5 = KM5, KM6 = KM6, KMN8 = KMN8, KMN9 = KMN9,KMN10 = KMN10,
+                KMN11 = KMN11, KMN12 = KMN12, KD = KD, KAD4 = KAD4,
+                alphahat=alphahat
+      )#,P=P,xstar=xstar, EV=EV)
 
   class(kesti) <- "klmridge"
   kesti

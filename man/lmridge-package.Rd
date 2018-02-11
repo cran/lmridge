@@ -13,6 +13,6 @@ This package contains functions for fitting linear ridge regression models, incl
 For a complete list of functions, use \code{library(help="lmridge")}.
 }
 
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \keyword{ package }

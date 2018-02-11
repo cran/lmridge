@@ -4,7 +4,7 @@
 
 \title{Summarizing Linear Ridge Regression Fits}
 
-\description{The \code{summary} method for class "lmridge" for scalar or vector biasing parameter \eqn{K}{K}.}
+\description{The \code{summary} method for class "lmridge" for scalar or vector biasing parameter \eqn{K}{K} (Cule and De lorio, 2012).}
 
 \usage{
 \method{summary}{lmridge}(object, \dots)
@@ -24,24 +24,27 @@
 
 \value{
 The function \code{summary} computes and returns a list of summary statistics of the fitted linear ridge regression model for scalar or vector value biasing parameter \eqn{K}{K} given as argument in \code{lmridge} function.
-\item{coefficients}{a \eqn{p \times 5}{p * 5} matrix with columns for the scaled estimated, descaled estimated coefficients, scaled standard error, scaled \emph{t}-statistics, and corresponding \emph{p}-value (two-tailed).}
+\item{coefficients}{A \eqn{p \times 5}{p * 5} matrix with columns for the scaled estimated, descaled estimated coefficients, scaled standard error, scaled \emph{t}-statistics, and corresponding \emph{p}-value (two-tailed). The Intercept term is computed by the relation \eqn{\hat{\beta}_{R_{0K}}=\overline{y}-\sum_{j=1}^{p}\overline{X}_j \hat{\beta}_{R_{0K}}}{\hat{\beta}_{R0K}=ybar-\sum_{j=1}^p(Xbar_j \hat{\beta}_{R0K})}. The standard error of intercept term is computed as, \eqn{SE(\hat{\beta}_{R_{0K}})=\sqrt{Var(\overline{y}) +\overline{X}_j^2 diag[Cov(\hat{\beta}_{R_{0K}})]}}{SE(\hat{\beta}_{R_{0K}})=\sqrt{Var(ybar)+Xbar_j^2 diag[Cov(\hat{\beta}_{R})]}}.}
 \item{stats}{Ridge related statistics of \emph{R}-squared, adjusted \emph{R}-squared, \emph{F}-statistics for testing of coefficients, AIC and BIC values for given biasing parameter \eqn{K}{K}.}
 \item{rmse1}{Minimum MSE value for given biasing parameter \eqn{K}{K}.}
 \item{rmse2}{Value of \eqn{K}{K} at which MSE is minimum.}
 }
 
 \references{
+
 Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:1205.0686v1 [stat.AP]}.
 
-Hoerl, A.E., Kennard, R.W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+
+Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }
 
-\author{Muhammad Imdadullah, Dr. Muhammad Aslam}
+\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
 
 \seealso{The ridge model fitting \code{\link{lmridge}}}
 
 \examples{
-mod <- lmridge(y~., as.data.frame(Hald), K=c(0, 0.0132, 0.1, 0.5))
+mod <- lmridge(y~., as.data.frame(Hald), K = c(0, 0.0132, 0.1, 0.5))
 summary(mod)
 
 ## coefficients for first biasing parameter
