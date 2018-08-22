@@ -1,0 +1,19 @@
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+citHeader("Please cite both the liureg related paper and the lmridge package:")
+
+citEntry(entry="Manual",
+    title = "{lmridge}: Linear Ridge Regression with Ridge Penalty and Ridge Statistics",
+    author = personList(as.person("M. U. Imdad"),
+                        as.person("M. Aslam")),
+    year = year,
+    note = note,
+    url = "https://CRAN.R-project.org/package=lmridge",
+
+
+    textVersion =
+         paste("Imdad, M. U. & Aslam, M. (2018). ",
+               "lmridge: Linear Ridge Regression with Ridge Penalty and Ridge Statistics. ",
+               "URL https://CRAN.R-project.org/package=lmridge, ", note)
+)

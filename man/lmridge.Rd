@@ -8,7 +8,8 @@
 
 \title{Linear Ridge Regression}
 
-\description{Fits a linear ridge regression model after scaling regressors and returns an object of class "lmridge" (by calling \code{lmridgeEst} function) designed to be used in plotting method, testing of ridge coefficients and for computation of different ridge related statistics. The ridge biasing parameter \eqn{K}{K} can be a scalar or a vector.}
+\description{Fits a linear ridge regression model after scaling regressors and returns an object of class "lmridge" (by calling \code{lmridgeEst} function) designed to be used in plotting method, testing of ridge coefficients and for computation of different ridge related statistics. The ridge biasing parameter \eqn{K}{K} can be a scalar or a vector. See Hoerl et al., 1975 <\url{https://doi.org/10.1080/03610927508827232}>,  Horel and Kennard, 1970 <\url{http://doi.org/10.2307/1267351}>.
+}
 
 \usage{lmridge(formula, data, K = 0, scaling=c("sc", "scaled", "centered"), \dots)
 lmridgeEst(formula, data, K=0, scaling=c("sc", "scaled", "centered"), \dots)
@@ -53,16 +54,16 @@ lmridgeEst(formula, data, K=0, scaling=c("sc", "scaled", "centered"), \dots)
 }
 
 \references{
-Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \href{https://doi.org/10.1080/03610927508827232}{Hoer et al., 1975}.
 
-Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \href{http://doi.org/10.2307/1267351}{Hoerl and Kennard, 1970}.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }
 
 \note{The function at the current form cannot handle missing values. The user has to take prior action with missing values before using this function.}
 
-\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
+\author{Muhammad Imdad Ullah, Muhammad Aslam}
 
 \seealso{Testing of ridge coefficient \code{\link{summary.lmridge}}}
 
@@ -106,4 +107,4 @@ rstats2(mod)
 lmridgeEst(y~., data = as.data.frame(Hald), K = seq(0, 0.1, 0.01), scaling = "sc")
 }
 
-\keyword{Ridge Regression}
+\keyword{ridge regression}

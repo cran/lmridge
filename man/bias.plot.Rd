@@ -4,7 +4,7 @@
 \title{Bias Variance and MSE Trade-off Plot}
 
 \description{
-Trade-off between bias, variance and MSE of the linear ridge regression against vector or scalar value of biasing parameter \eqn{K}{K} (see Kalivas and Palmer, 2014).}
+Trade-off between bias, variance and MSE of the linear ridge regression against vector or scalar value of biasing parameter \eqn{K}{K} (see Kalivas and Palmer, 2014 <\url{https://doi.org/10.1002/cem.2555}>).}
 
 \usage{bias.plot(x, abline = TRUE, \dots)}
 
@@ -22,15 +22,15 @@ The effect of multicollinearity on the coefficient estimates can be identified u
 \references{
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 
-Kalivas, J. H., and Palmer, J. (2014). Characterizing multivariate calibration tradeoffs (bias, variance, selectivity, and sensitivity) to select model tuning parameters. \emph{Journal of Chemometrics}, \strong{28}(5), 347--357.
+Kalivas, J. H., and Palmer, J. (2014). Characterizing multivariate calibration tradeoffs (bias, variance, selectivity, and sensitivity) to select model tuning parameters. \emph{Journal of Chemometrics}, \strong{28}(5), 347--357. \href{https://doi.org/10.1002/cem.2555}{Kalivas and Palmer, 2014}.
 }
 
-\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
+\author{Muhammad Imdad Ullah, Muhammad Aslam}
 
 \seealso{The ridge model fitting \code{\link{lmridge}}, ridge CV and GCV plots \code{\link{cv.plot}}, ridge AIC and BIC plots \code{\link{info.plot}}, m-scale and isrm plots \code{\link{isrm.plot}}, ridge and VIF trace \code{\link{plot.lmridge}}, miscellaneous ridge plots \code{\link{rplots.plot}} }
 
 \examples{
-mod <- lmridge(y~., as.data.frame(Hald), K = seq(0, 0.3, 0.001))
+mod <- lmridge(y~., as.data.frame(Hald), K = seq(0, 0.3, 0.002))
 ## for indication vertical line (biasing parameter k) and
 ## horizontal line (minimum minimum ridge MSE values corresponding to vertical line)
 bias.plot(mod)
@@ -39,6 +39,6 @@ bias.plot(mod)
 bias.plot(mod, abline=FALSE)
 }
 
-\keyword{Ridge MSE}
-\keyword{Ridge Bias}
-\keyword{Ridge Variance}
+\keyword{ridge MSE}
+\keyword{ridge bias}
+\keyword{ridge variance}

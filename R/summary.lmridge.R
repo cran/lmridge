@@ -16,17 +16,33 @@ summary.lmridge <- function(object, ...) {
 
   # rsigma2<-object$rsigma2
   rcoefs <- object$coef
-  #vcov<-object$vcov
   vcov <- vcov(object)
+
   #calculation of Statndard Error
   SE <- lapply(vcov, function(x) {
     sqrt(diag(x))
   })
+
   SE <- do.call(cbind, SE)
   rownames(SE) <- rownames(rcoefs)
   colnames(SE) <- colnames(rcoefs)
+
+  # t-values
+
   tstats <- (rcoefs / SE)
-  pvalue <- 2 * (1 - pnorm(abs(tstats)))
+
+  H <- hatr(object)
+  df <- lapply(H, function(x){
+  n - sum(diag(x))
+  })
+  df <- do.call(cbind, df)
+
+  #pvalue <- 2 * (1 - pnorm(abs(tstats)))
+  if(object$Inter){
+    pvalue <- 2*pt(-abs(tstats), rep(df-1, each=nrow(tstats)))
+  }else {
+    pvalue <- 2*pt(-abs(tstats), rep(df, each=nrow(tstats)))
+  }
 
   summaries <- vector("list", length(res$K))
 
@@ -36,66 +52,97 @@ summary.lmridge <- function(object, ...) {
   R2r <- round(rstats1(object)$R2, 4)
   adjR2r <- round(rstats1(object)$adjR2, 4)
 
-  #  seb0<-1/n * var(y) +  colSums(rcoefs^2) # standard Error of beta0
-  #seb0 <- sqrt(1/n*var(y)+ sum(diag(vcov(object)[[1]]))%*%colMeans(object$mf[,-1]) )
-  #seb0<-sqrt(1/n * var(y) + diag(vcov(object)[[1]])%*%object$xm)
-
-
   b0 <- ym - colSums(rcoefs * xm)
   seb0<-numeric(length(res$K))
+
   for (i in seq(length(res$K))) {
-   # seb0<-(1/(object$n)*var(object$y)+sum(1/(object$n)*object$coef[,i]^2)) # standard Error of beta0
-    #seb0[i]<-sqrt(1/n*var(y) + 1/n*sum(diag(vcov(object)[[i]])%*%object$xscale))
     seb0[i]<-sqrt(var(y)/n+ (object$xm^2)%*%(diag(vcov(object)[[i]])))
-    #seb0[i]<-sqrt(t(object$coef[,i]) %*%vcov(object)[[i]]%*%object$coef[,i])
     summary <- vector("list")
-    #    if(object$lambda[[i]]!=0){
 
     if (object$Inter) {
-      summary$coefficients <-
-        cbind(coefs[i,], c(b0[i], rcoefs[,i]), c(seb0[i], SE[,i]),
-              c(b0[i] / seb0[i], tstats[,i]), c(2*(1-pnorm(abs(b0[i]/seb0[i]))), pvalue[,i]))
+      summary$coefficients <- cbind(coefs[i,],
+                                    c(b0[i], rcoefs[,i]),
+                                    c(seb0[i], SE[,i]),
+                                    c(b0[i] / seb0[i], tstats[,i]),
+                                    c(2*pt(-abs(b0[i]/seb0[i]),df[i]-1 ), pvalue[,i])
+                                    )
 
-      colnames(summary$coefficients) <-
-        c("Estimate", "Estimate (Sc)", "StdErr (Sc)", "t-value (Sc)", "Pr(>|t|)")
-      summary$stats <-
-        cbind(
-          R2r[i], adjR2r[i], rstats2(object)$dfridge[i], rstats1(object)$Fv[i],
-          infocr(object)[i,1], infocr(object)[i,2]
-        )
-      #summary$stats <- cbind(object$lambda[i], R2r[i], object$df[i],
-      #                       object$AIC[i], object$BIC[i] )
-      colnames(summary$stats) <-
-        c("R2", "adj-R2","DF ridge", "F", "AIC", "BIC")
+      colnames(summary$coefficients) <- c("Estimate",
+                                          "Estimate (Sc)",
+                                          "StdErr (Sc)",
+                                          "t-value (Sc)",
+                                          "Pr(>|t|)"
+                                          )
+
+      summary$stats <- cbind(R2r[i],
+                             adjR2r[i],
+                             rstats2(object)$dfridge[i],
+                             rstats1(object)$Fv[i],
+                             infocr(object)[i,1],
+                             infocr(object)[i,2]
+                             )
+
+      colnames(summary$stats) <- c("R2",
+                                   "adj-R2",
+                                   "DF ridge",
+                                   "F",
+                                   "AIC",
+                                   "BIC")
+
       summary$rmse1 <- min(rstats1(object)$mse)
       summary$rmse2 <- object$K[which.min(rstats1(object)$mse)]
+      summary$df1<-rstats2(object)$dfridge
+      summary$df2<-rstats2(object)$redf
+      summary$fpvalue<-pf(rstats1(object)$Fv[i],
+                          summary$df1,
+                          summary$df2,
+                          lower.tail=F )
     } else{
-      summary$coefficients <-
-        cbind(coefs[i,-1], rcoefs[,i], SE[,i],  tstats[,i],  pvalue[,i])
-      #
-      colnames(summary$coefficients) <-
-        c("Estimate", "Estimate (Sc)", "StdErr", "t-value", "Pr(>|t|)")
+      summary$coefficients <- cbind(coefs[i,],
+                                    rcoefs[,i],
+                                    SE[,i],
+                                    tstats[,i],
+                                    pvalue[,i])
 
-      summary$stats <-
-        cbind(
-          R2r[i], adjR2r[i], rstats2(object)$dfridge[i], rstats1(object)$Fv[i],
-          infocr(object)[i,1], infocr(object)[i,2]
+      colnames(summary$coefficients) <- c("Estimate",
+                                          "Estimate (Sc)",
+                                          "StdErr",
+                                          "t-value",
+                                          "Pr(>|t|)")
+
+      summary$stats <- cbind(R2r[i],
+                             adjR2r[i],
+                             rstats2(object)$dfridge[i],
+                             rstats1(object)$Fv[i],
+                             infocr(object)[i,1],
+                             infocr(object)[i,2]
         )
-      #summary$stats <- cbind(object$lambda[i], R2r[i], object$df[i],
-      #                       object$AIC[i], object$BIC[i] )
-      colnames(summary$stats) <-
-        c("R2","adj-R2", "DF ridge", "F", "AIC", "BIC")
+
+      colnames(summary$stats) <- c("R2",
+                                   "adj-R2",
+                                   "DF ridge",
+                                   "F",
+                                   "AIC",
+                                   "BIC")
 
       summary$rmse1 <- min(rstats1(object)$mse)
       summary$rmse2 <- object$K[which.min(rstats1(object)$mse)]
-    }
+      summary$df1<-rstats2(object)$dfridge
+      summary$df2<-rstats2(object)$redf
+      summary$fpvalue<-pf(rstats1(object)$Fv[i],
+                          summary$df1,
+                          summary$df2,
+                          lower.tail=F )
+    }  # else end
     summary$K <- object$K[i]
 
     summaries[[i]] <- summary
     names(summaries)[[i]] <- paste("summary ", i, sep = " ")
     rm(summary)
-  }
+  } # for loop end
+
   res$summaries <- summaries
   class(res) <- "summary.lmridge"
   res
+
 }

@@ -25,14 +25,14 @@ returns a list of matrix for each biasing parameter \eqn{K}{K}:
 \item{hatr}{A list of hat matrix for each biasing parameter \eqn{K}{K}}. }
 
 \references{
-Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:1205.0686v1 [stat.AP]}.
+Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:1205.0686v1 [stat.AP]}. \href{https://arxiv.org/abs/1205.0686v1}{Cule and De lorio, 2012}.
 
 Hastie, T. and Tibshirani, R. (1990). \emph{Generalized Additive Models}. Chapman \& Hall.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }
 
-\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
+\author{Muhammad Imdad Ullah, Muhammad Aslam}
 
 \seealso{The ridge model fitting \code{\link{lmridge}}, ridge Var-Cov matrix \code{\link{vcov.lmridge}}}
 
@@ -45,5 +45,5 @@ hatr(mod)
 hatr(mod)[[2]]
 }
 
-\keyword{ Ridge Regression}
-\keyword{ Ridge hat matrix }
+\keyword{ ridge regression}
+\keyword{ ridge hat matrix }

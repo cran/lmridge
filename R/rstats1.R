@@ -48,14 +48,12 @@ rstats1.lmridge <- function(x,...) {
   rownames(var) <- paste("K=", K, sep = "")
   colnames(var) <- c("VAR")
 
-  bias2 <-
-    lapply(K, function(lam) {
+  bias2 <- lapply(K, function(lam) {
       sum((-lam * solve(t(x$xs) %*% x$xs + lam * diag(p)) %*% ls) ^ 2)
     })
   bias2 <- do.call(rbind, bias2)
   rownames(bias2) <- paste("K=", K, sep = "")
   colnames(bias2) <- c("Bias^2")
-
 
   mser <- mapply(function(x,y) {
     x + y
@@ -77,11 +75,13 @@ rstats1.lmridge <- function(x,...) {
   SSRR <- apply(x$rfit,2, function(x) {
     sum(x ^ 2)
   })
+
   SSTR <- t(y) %*% y
 
   R2r <- lapply(SSRR,function(x) {
     x / SSTR
   })
+
   R2r <- do.call(rbind, R2r)
   rownames(R2r) <- paste("K=", K, sep = "")
   colnames(R2r) <- c("R2")
@@ -144,4 +144,4 @@ print.rstats1 <-
     cat("\n")
     invisible(x)
 
-  }
+}

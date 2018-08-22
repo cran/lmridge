@@ -33,5 +33,5 @@ vif.lmridge <- function(x, ...) {
     diag(x)
   }))
   rownames(res) <- paste("k=", x$K,sep = "")
-  res
+  round(res, 5)
 }

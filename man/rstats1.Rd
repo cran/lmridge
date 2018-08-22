@@ -6,7 +6,7 @@
 \title{Ordinary Ridge Regression Statistics 1}
 
 \description{
-The \code{rstats1} function computes the ordinary ridge related statistics such as variance, squared bias, MSE, R-squared and condition number (CN), etc. (see Lee, 1979; Kalivas and Palmer, 2014)}
+The \code{rstats1} function computes the ordinary ridge related statistics such as variance, squared bias, MSE, R-squared and condition number (CN), etc. (see Lee, 1979; Kalivas and Palmer, 2014 <\url{https://doi.org/10.1002/cem.2555}>)}
 
 \usage{
    rstats1(x, \dots)
@@ -38,18 +38,18 @@ The \code{rstats1} function computes the ordinary ridge regression related stati
 }
 
 \references{
-Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:1205.0686v1 [stat.AP]}.
+Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:1205.0686v1 [stat.AP]}. \href{https://arxiv.org/abs/1205.0686v1}{Cule and De lorio, 2012}.
 
-Hoerl, A. E., Kennard, R. W., and Baldwin, K.F. (1975). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communication in Statistics}, \strong{5}, 308-323.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \href{https://doi.org/10.1080/03610927508827232}{Hoer et al., 1975}.
 
-Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \href{http://doi.org/10.2307/1267351}{Hoerl and Kennard, 1970}.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 
-Kalivas, J. H., and Palmer, J. (2014). Characterizing multivariate calibration tradeoffs (bias, variance, selectivity, and sensitivity) to select model tuning parameters. \emph{Journal of Chemometrics}, \strong{28}(5), 347--357.
+Kalivas, J. H., and Palmer, J. (2014). Characterizing multivariate calibration tradeoffs (bias, variance, selectivity, and sensitivity) to select model tuning parameters. \emph{Journal of Chemometrics}, \strong{28}(5), 347--357. \href{https://doi.org/10.1002/cem.2555}{Kalivas and Palmer, 2014}.
 }
 
-\author{Dr. Muhammad Imdad Ullah, Dr. Muhammad Aslam}
+\author{Muhammad Imdad Ullah, Muhammad Aslam}
 
 \seealso{Ridge related statistics \code{\link{rstats2}}, the ridge model fitting \code{\link{lmridge}}, ridge var-cov matrix \code{\link{vcov}}
 }
@@ -61,4 +61,4 @@ rstats1(mod)
 }
 
 \keyword{ridge statistics}
-\keyword{ridge Condition Number}
+\keyword{ridge condition number}

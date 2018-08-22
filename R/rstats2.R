@@ -6,12 +6,14 @@ rstats2.lmridge <- function(x,...) {
   y <- x$y
   n <- nrow(x$xs)
   p <- ncol(x$xs)
+
   eigval <- eigen(t(x$xs) %*% x$xs)$values
 
   #df ridge
   dfridge <- as.vector(lapply(hatr(x), function(x) {
     sum(diag(x))
   }))
+
   dfridge <- do.call(rbind, dfridge)
   rownames(dfridge) <- paste("K=", K,sep = "")
   colnames(dfridge) <- c("df ridge")
@@ -53,6 +55,7 @@ rstats2.lmridge <- function(x,...) {
     sum(x ^ 2)
   })
 
+# Computation of ISRM
 
   rfact_isrm <-
     lapply(K, function(lam) {
@@ -66,13 +69,14 @@ rstats2.lmridge <- function(x,...) {
   rownames(ISRM) <- paste("K=", K, sep = "")
   colnames(ISRM) <- c("ISRM")
 
-  #m-scale vinod(1976)
-  m <- lapply(K, function(x) {
-    p - sum(eigval / (eigval + rep(x, each=p) ))
-  })
-  m <- do.call(rbind, m)
-  rownames(m) <- paste("K=", K, sep = "")
-  colnames(m) <- c("m scale")
+#m-scale vinod(1976)
+#  m <- lapply(K, function(x) {
+#    p - sum(eigval / (eigval + rep(x, each=p) ))
+#  })
+#  m <- do.call(rbind, m)
+#  rownames(m) <- paste("K=", K, sep = "")
+#  colnames(m) <- c("m scale")
+  m <- p- dfridge
 
   diaghat <- lapply(hatr(x), function(x) {
     diag(x)
@@ -93,11 +97,19 @@ rstats2.lmridge <- function(x,...) {
   #PRESS<-lapply(1:length(K), function(i, res, hatR){sum( (res[,i]/(1-1/n-hatR[,i]) )^2)},
   #              res=resid(obj), hatR=diaghat)
   PRESS <- colSums(press(x) ^ 2)
+  EP = n - redf
+  colnames(EP) = c("EP")
   #PRESS<-apply(press(obj), 2, function(x){sum(x^2)})
-  mses <- list(
-    CK = CK, dfridge = dfridge, EDF=n-redf, redf = redf,
-    EF = EF, ISRM = ISRM, m = m, PRESS = PRESS #,K = K,
-  )
+  mses <- list(CK = CK,
+               dfridge = dfridge,
+               EP = EP,
+               redf = redf,
+               EF = EF,
+               ISRM = ISRM,
+               m = m,
+               PRESS = PRESS
+               #,K = K,
+              )
 
   class(mses) <- "rstats2"
   mses
@@ -105,23 +117,22 @@ rstats2.lmridge <- function(x,...) {
 }
 
 print.rstats2 <- function(x, digits = max(5,getOption("digits") - 5),...) {
-  #  cat("Call:\n", paste(deparse(x$call), sep="\n", collapse="\n"), "\n\n", sep="")
+#  cat("Call:\n", paste(deparse(x$call), sep="\n", collapse="\n"), "\n\n", sep="")
   cat("\nRidge Regression Statistics 2:\n\n")
-  res <- cbind(
-    CK   = x$CK,
-#    rsigma2 = x$rsigma2,
-    dfridge = x$dfridge,
-    EDF = x$EDF,
-    REDF  = x$redf,
-    EF   = x$EF,
-    ISRM = x$ISRM,
-    m    = x$m,
-    PRESS = x$PRESS
-  )
+  res <- cbind(CK   = x$CK,
+               #rsigma2 = x$rsigma2,
+               dfridge = x$dfridge,
+               EP = x$EP,
+               REDF  = x$redf,
+               EF   = x$EF,
+               ISRM = x$ISRM,
+               m    = x$m,
+               PRESS = x$PRESS
+              )
   colnames(res) <- c("CK",
  #                    "RSigma^2",
                      "DF ridge",
-                     "EDF",
+                     "EP",
                      "REDF",
                      "EF"  ,
                      "ISRM",

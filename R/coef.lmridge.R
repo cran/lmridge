@@ -9,5 +9,5 @@ coef.lmridge <- function(object, ...) {
     scaledcoef <- t(as.matrix(object$coef / object$xscale))
   }
 
-  drop(scaledcoef)
+  drop(round(scaledcoef, 5))
 }

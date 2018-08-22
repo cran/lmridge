@@ -17,7 +17,7 @@ vcov.lmridge <- function(object,...) {
     x %*% t(x)
   })
 
-  vcovbr <- mapply(function(x,y) {
+  vcovbr <- mapply(function(x, y) {
     x * y
   },rsigma2,ZZt, SIMPLIFY = FALSE)
   #vcovbr<-mapply(function(x,y){x*y},object$sigma2,ZZt, SIMPLIFY = FALSE)
