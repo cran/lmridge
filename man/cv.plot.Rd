@@ -3,7 +3,7 @@
 
 \title{Ridge CV and GCV Plot}
 
-\description{Plot of ridge CV and GCV against scalar or vector values of biasing parameter \eqn{K}{K} (see Golub et al., 1979 <\url{http://doi.org/10.2307/1268518}>).}
+\description{Plot of ridge CV and GCV against scalar or vector values of biasing parameter \eqn{K}{K} (see Golub et al., 1979 <\doi{10.1080/00401706.1979.10489751}>).}
 
 \usage{cv.plot(x, abline = TRUE, \dots)}
 \arguments{
@@ -19,9 +19,9 @@ Function \code{cv.plot} can be used to plot the values of ridge CV and GCV again
 \value{Nothing returned}
 
 \references{
-Delaney, N. J. and Chatterjee, S. (1986). Use of the Bootstrap and Cross-Validation in Ridge Regression. \emph{Journal of Business & Economic Statistics}. \strong{4}(2), 255--262. \href{http://doi.org/10.2307/1391324}{Delaney and Chatterjee, 1986}.
+Delaney, N. J. and Chatterjee, S. (1986). Use of the Bootstrap and Cross-Validation in Ridge Regression. \emph{Journal of Business & Economic Statistics}. \strong{4}(2), 255--262.
 
-Golub, G., Wahba, G. and Heat, C. (1979). Generalized Cross Validation as a Method for Choosing a Good Ridge Parameter. \emph{Technometrics.} \strong{21}, 215--223. \href{http://doi.org/10.2307/1268518}{Golub et al., 1979}.
+Golub, G., Wahba, G. and Heat, C. (1979). Generalized Cross Validation as a Method for Choosing a Good Ridge Parameter. \emph{Technometrics.} \strong{21}, 215--223. \doi{10.2307/1268518}.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }

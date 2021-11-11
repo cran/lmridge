@@ -3,7 +3,7 @@
 
 \title{Model Selection Criteria Plots}
 
-\description{Plot of ridge AIC and BIC model selection criteria against ridge degrees of freedom (see Akaike, 1974 <\url{https://doi.org/10.1109/TAC.1974.1100705}>; Imdad, 2017 and Schwarz, 1978 <\url{https://doi.org/10.1214/aos/1176344136}>).}
+\description{Plot of ridge AIC and BIC model selection criteria against ridge degrees of freedom (see Akaike, 1974 <\doi{10.1109/TAC.1974.1100705}>; Imdad, 2017 and Schwarz, 1978 <\doi{10.1214/aos/1176344136}>).}
 
 \usage{info.plot(x, abline = TRUE, \dots)}
 
@@ -20,11 +20,11 @@ Plot of ridge AIC and BIC against ridge degress of freedom \eqn{\sum_{j=1}^p \fr
 
 \references{
 
-Akaike, H. (1974). A new look at the Statistical Model Identification. \emph{IEEE Transaction on Automatic Control}, \strong{9}(6), 716--723. \href{https://doi.org/10.1109/TAC.1974.1100705}{Akaike, 1974}.
+Akaike, H. (1974). A new look at the Statistical Model Identification. \emph{IEEE Transaction on Automatic Control}, \strong{9}(6), 716--723. \doi{10.1109/TAC.1974.1100705}.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 
-Schwarz, G. (1978). Estimating the Dimension of a Model. \emph{Annals of Statistics}, \strong{6}(2), 461--464. \href{https://doi.org/10.1214/aos/1176344136}{Schwarz, 1978}.
+Schwarz, G. (1978). Estimating the Dimension of a Model. \emph{Annals of Statistics}, \strong{6}(2), 461--464. \doi{10.1214/aos/1176344136}.
 }
 
 \author{Muhammad Imdad Ullah, Muhammad Aslam}

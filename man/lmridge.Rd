@@ -8,7 +8,7 @@
 
 \title{Linear Ridge Regression}
 
-\description{Fits a linear ridge regression model after scaling regressors and returns an object of class "lmridge" (by calling \code{lmridgeEst} function) designed to be used in plotting method, testing of ridge coefficients and for computation of different ridge related statistics. The ridge biasing parameter \eqn{K}{K} can be a scalar or a vector. See Hoerl et al., 1975 <\url{https://doi.org/10.1080/03610927508827232}>,  Horel and Kennard, 1970 <\url{http://doi.org/10.2307/1267351}>.
+\description{Fits a linear ridge regression model after scaling regressors and returns an object of class "lmridge" (by calling \code{lmridgeEst} function) designed to be used in plotting method, testing of ridge coefficients and for computation of different ridge related statistics. The ridge biasing parameter \eqn{K}{K} can be a scalar or a vector. See Hoerl et al., 1975 <\doi{10.1080/03610927508827232}>,  Horel and Kennard, 1970 <\doi{10.1080/00401706.1970.10488634}>.
 }
 
 \usage{lmridge(formula, data, K = 0, scaling=c("sc", "scaled", "centered"), \dots)
@@ -54,9 +54,9 @@ lmridgeEst(formula, data, K=0, scaling=c("sc", "scaled", "centered"), \dots)
 }
 
 \references{
-Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \href{https://doi.org/10.1080/03610927508827232}{Hoer et al., 1975}.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \doi{10.1080/03610927508827232}.
 
-Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \href{http://doi.org/10.2307/1267351}{Hoerl and Kennard, 1970}.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \doi{10.2307/1267351}.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }

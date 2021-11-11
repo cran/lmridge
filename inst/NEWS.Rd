@@ -1,10 +1,18 @@
 \name{NEWS}
 \title{News for Package 'lmrdige'}
 
-\section{Changes in lmrdige version 1.2 (2018-08-20)}{
+\section{Change in lmridge version 1.2.1 (2021-11-10)}{
+\subsection{Improvement}{
+  \itemize{
+    \item A correction in formula of KAD4 (Dorugade, 2014) from \code{kest()} function  was made.
+  }
+}
+}
+
+\section{Changes in lmridge version 1.2 (2018-08-20)}{
 \subsection{Improvements/ Updates}{
   \itemize{
-    \item In \code{rstat2(0)} EDF is chanages to EP.
+    \item In \code{rstat2()} EDF is chanages to EP.
     \item P-value for ridge F-statistics is computed and displayed in summary statistics.
     \item Information about EP, df1, df2 are added in help file of \code{summary()}.
     \item Appropriate rounding of numbers is done in \code{summary(), lmridge(), vif()} functions.

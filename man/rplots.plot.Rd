@@ -20,15 +20,15 @@ Function \code{rplots.plot} can be used to plot the values of df vs \eqn{K}{K}, 
 \value{nothing}
 
 \references{
-Allen, D. M. (1971). Mean Square Error of Prediction as a Criterion for Selecting Variables. \emph{Technometrics}, \strong{13}, 469-475. \href{http://doi.org/10.2307/1267161}{Allen, 1971}.
+Allen, D. M. (1971). Mean Square Error of Prediction as a Criterion for Selecting Variables. \emph{Technometrics}, \strong{13}, 469-475. \doi{10.1080/00401706.1971.10488811}.
 
-Allen, D. M. (1974). The Relationship between Variable Selection and Data Augmentation and Method for Prediction. \emph{Technometrics}, \strong{16}, 125-127. \href{http://doi.org/10.2307/1267500}{Allen, 1974}.
+Allen, D. M. (1974). The Relationship between Variable Selection and Data Augmentation and Method for Prediction. \emph{Technometrics}, \strong{16}, 125-127. \doi{10.1080/00401706.1974.10489157}.
 
 Berk, R. (2008). \emph{Statistical Learning from a Regression Perspective.} Springer.
 
-Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \href{https://doi.org/10.1080/03610927508827232}{Hoer et al., 1975}.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \doi{10.1080/03610927508827232}.
 
-Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \href{http://doi.org/10.2307/1267351}{Hoerl and Kennard, 1970}.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \doi{10.1080/00401706.1970.10488634}.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }

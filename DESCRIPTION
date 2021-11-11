@@ -1,28 +1,28 @@
 Package: lmridge
 Type: Package
 Title: Linear Ridge Regression with Ridge Penalty and Ridge Statistics
-Version: 1.2
+Version: 1.2.1
 Authors@R: c(person(given = c("Imdad", "Ullah"), family = "Muhammad", role = c("aut", "cre"), email = "mimdadasad@gmail.com",
     comment = c(ORCID = "0000-0002-1315-491X")), 
 		person(given = "Aslam", family = "Muhammad", role = c("aut", "ctb"), email = "aslamasadi@bzu.edu.pk"))
 Maintainer: Imdad Ullah Muhammad <mimdadasad@gmail.com>
 Description: Linear ridge regression coefficient's estimation and testing with different ridge related measures such as MSE, R-squared etc.
   REFERENCES
-  i.   Hoerl and Kennard (1970) <doi:10.2307/1267351>
-  ii.  Halawa and El-Bassiouni (2000) <doi:10.1080/00949650008812006>
-  iii. Imdadullah, Aslam, and Saima (2017)
+  i.   Hoerl and Kennard (1970) <doi:10.1080/00401706.1970.10488634>,
+  ii.  Halawa and El-Bassiouni (2000) <doi:10.1080/00949650008812006>,
+  iii. Imdadullah, Aslam, and Saima (2017),
   iv.  Marquardt (1970) <doi:10.2307/1267205>.
 License: GPL (>= 2.0)
 LazyData: TRUE
 Depends: R (>= 3.4), stats
 Imports: graphics
-BugReports: http://rfaqs.com/contact
+BugReports: https://rfaqs.com/contact/
 Note: Department of Statistics, Bahauddin Zakariya University, Multan,
         Pakistan
 NeedsCompilation: no
-Packaged: 2018-08-22 02:00:54 UTC; imdad
+Packaged: 2021-11-11 06:02:13 UTC; m.imdad
 Author: Imdad Ullah Muhammad [aut, cre]
     (<https://orcid.org/0000-0002-1315-491X>),
   Aslam Muhammad [aut, ctb]
 Repository: CRAN
-Date/Publication: 2018-08-22 16:20:03 UTC
+Date/Publication: 2021-11-11 07:50:02 UTC

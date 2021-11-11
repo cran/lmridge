@@ -25,7 +25,7 @@ returns a list of matrix for each biasing parameter \eqn{K}{K}:
 \item{hatr}{A list of hat matrix for each biasing parameter \eqn{K}{K}}. }
 
 \references{
-Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:1205.0686v1 [stat.AP]}. \href{https://arxiv.org/abs/1205.0686v1}{Cule and De lorio, 2012}.
+Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:abs/1205.0686v1 [stat.AP]}.
 
 Hastie, T. and Tibshirani, R. (1990). \emph{Generalized Additive Models}. Chapman \& Hall.
 

@@ -20,7 +20,7 @@ The \code{vcov} function computes variance-covariance matrix for scalar or vecto
 A list of matrix of estimated covariances in the linear ridge regression model for scalar or vector biasing parameter \code{K}{K} is produced. Each list element has row and column names corresponding to the parameter names given by the \code{coef(mod)}. List items are named correspond to values of biasing parameter \eqn{K}{K}.}
 
 \references{
-Brown, G.W. and Beattie, B.R. (1975). Improving Estimates of Economic Parameters by use of Ridge Regression with Production Function Applications. \emph{American Journal of Agricultural Economics}, 57(1), 21-32. \href{https://doi.org/10.2307/1238836}{Brown, Beattie, 1975}.
+Brown, G.W. and Beattie, B.R. (1975). Improving Estimates of Economic Parameters by use of Ridge Regression with Production Function Applications. \emph{American Journal of Agricultural Economics}, 57(1), 21-32. \doi{10.2307/1238836}.
 }
 
 \author{Muhammad Imdad Ullah, Muhammad Aslam}

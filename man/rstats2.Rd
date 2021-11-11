@@ -6,7 +6,7 @@
 \title{Ordinary Ridge Regression Statistics 2}
 
 \description{
-The \code{rstats2} function computes the ordinary ridge related statistics such as \eqn{Ck}{ck}, \eqn{\sigma^2}{\sigma^2}, ridge degrees of freedom, effective degrees of freedom (EDF), and prediction residual error sum of squares PRESS statistics for scalar or vector value of biasing parameter \eqn{K}{K} (See Allen, 1974 <\url{http://doi.org/10.2307/1267500}>; Lee, 1979; Hoerl and Kennard, 1970 <\url{http://doi.org/10.2307/1267351}>).}
+The \code{rstats2} function computes the ordinary ridge related statistics such as \eqn{Ck}{ck}, \eqn{\sigma^2}{\sigma^2}, ridge degrees of freedom, effective degrees of freedom (EDF), and prediction residual error sum of squares PRESS statistics for scalar or vector value of biasing parameter \eqn{K}{K} (See Allen, 1974 <\doi{10.2307/1267500}>; Lee, 1979; Hoerl and Kennard, 1970 <\doi{10.2307/1267351}>).}
 
 \usage{
    rstats2(x, \dots)
@@ -37,21 +37,21 @@ The \code{rstats2} function computes the ridge regression related different stat
 }
 
 \references{
-Allen, D. M. (1971). Mean Square Error of Prediction as a Criterion for Selecting Variables. \emph{Technometrics}, \strong{13}, 469-475. \href{http://doi.org/10.2307/1267161}{Allen, 1971}.
+Allen, D. M. (1971). Mean Square Error of Prediction as a Criterion for Selecting Variables. \emph{Technometrics}, \strong{13}, 469-475. \doi{10.1080/00401706.1971.10488811}.
 
-Allen, D. M. (1974). The Relationship between Variable Selection and Data Augmentation and Method for Prediction. \emph{Technometrics}, \strong{16}, 125-127. \href{http://doi.org/10.2307/1267500}{Allen, 1974}.
+Allen, D. M. (1974). The Relationship between Variable Selection and Data Augmentation and Method for Prediction. \emph{Technometrics}, \strong{16}, 125-127. \doi{10.1080/00401706.1974.10489157}.
 
-Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:1205.0686v1 [stat.AP]}. \href{https://arxiv.org/abs/1205.0686v1}{Cule and De lorio, 2012}.
+Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:1205.0686v1 [stat.AP]}.
 
 Hastie, T. and Tibshirani, R. (1990). \emph{Generalized Additive Models}. Chapman & Hall.
 
-Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \href{https://doi.org/10.1080/03610927508827232}{Hoer et al., 1975}.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \doi{10.1080/03610927508827232}.
 
-Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \href{http://doi.org/10.2307/1267351}{Hoerl and Kennard, 1970}.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \doi{10.1080/00401706.1970.10488634}.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 
-Kalivas, J. H., and Palmer, J. (2014). Characterizing Multivariate Calibration Tradeoffs (Bias, Variance, Selectivity, and Sensitivity) to Select Model Tuning Parameters. \emph{Journal of Chemometrics}, \strong{28}(5), 347--357. \href{https://doi.org/10.1002/cem.2555}{Kalivas and Palmer, 2014}.
+Kalivas, J. H., and Palmer, J. (2014). Characterizing Multivariate Calibration Tradeoffs (Bias, Variance, Selectivity, and Sensitivity) to Select Model Tuning Parameters. \emph{Journal of Chemometrics}, \strong{28}(5), 347--357. \doi{10.1002/cem.2555}.
 
 Lee, W. F. (1979). Model Estimation Using Ridge Regression with the Variane Normalization Criterion. \emph{Master thesis, Department of Educational Foundation Memorial University of Newfoundland.}
 }

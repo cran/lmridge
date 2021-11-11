@@ -77,7 +77,7 @@ kest.lmridge <- function(object,...) {
   KMN12 <-  median(1 / sqrt(KMNdenom1 / KMNdenom2))           #Muniz et al 2012
 
   KD <- max(cbind(0,HKB - 1 / n * max(vif(object))))               #Dorugae et al 2010
-  KAD4 <- min(0, (2 * p / max(EV)) * sum(sigma2 / alphahat ^ 2))
+  KAD4 <-  (2 * p / max(EV)) * sum(sigma2 / alphahat ^ 2)
 
   kesti <- list(mHKB = mHKB, LW = LW, LW76 = Lw1976, CV = CV, kCV = kCV,
                 HKB = HKB, KibAM =KibAM, kGCV = kGCV, DSk = DSk,GCV = GCV,#ls=ls,

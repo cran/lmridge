@@ -58,19 +58,19 @@ The function returns the list of following biasing parameter methods proposed by
 \references{
 Dorugade, A. and Kashid, D. (2010). Alternative Method for Choosing Ridge Parameter for Regression. \emph{Applied Mathematical Sciences}, \strong{4}(9), 447-456.
 
-Dorugade, A. (2014). New Ridge Parameters for Ridge Regression. \emph{Journal of the Association of Arab Universities for Basic and Applied Sciences}, \strong{15}, 94-99. \href{https://doi.org/10.1016/j.jaubas.2013.03.005}{Dorugade, 2014}.
+Dorugade, A. (2014). New Ridge Parameters for Ridge Regression. \emph{Journal of the Association of Arab Universities for Basic and Applied Sciences}, \strong{15}, 94-99. \doi{10.1016/j.jaubas.2013.03.005}.
 
-Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \href{https://doi.org/10.1080/03610927508827232}{Hoer et al., 1975}.
+Hoerl, A. E., Kennard, R. W., and Baldwin, K. F. (1975). Ridge Regression: Some Simulation. \emph{Communication in Statistics}, \strong{4}, 105-123. \doi{10.1080/03610927508827232}.
 
-Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \href{http://doi.org/10.2307/1267351}{Hoerl and Kennard, 1970}.
+Hoerl, A. E. and Kennard, R. W., (1970). Ridge Regression: Biased Estimation of Nonorthogonal Problems. \emph{Technometrics}, \strong{12}, 55-67. \doi{10.1080/00401706.1970.10488634}.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 
-Kibria, B. (2003). Performance of Some New Ridge Regression Estimators. \emph{Communications in Statistics-Simulation and Computation}, \strong{32}(2), 491-435. \href{https://doi.org/10.1081/SAC-120017499}{Kibria, 2003}.
+Kibria, B. (2003). Performance of Some New Ridge Regression Estimators. \emph{Communications in Statistics-Simulation and Computation}, \strong{32}(2), 491-435. \doi{10.1081/SAC-120017499}.
 
-Lawless, J., and Wang, P. (1976). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communications in Statistics-Theory and Methods}, \strong{5}(4), 307-323. \href{https://doi.org/10.1080/03610927608827353}{Lawless and Wang, 1976}.
+Lawless, J., and Wang, P. (1976). A Simulation Study of Ridge and Other Regression Estimators. \emph{Communications in Statistics-Theory and Methods}, \strong{5}(4), 307-323. \doi{10.1080/03610927608827353}.
 
-Muniz, G., and Kibria, B. (2009). On Some Ridge Regression Estimators: An Empirical Comparisons. \emph{Communications in Statistics-Simulation and Computation}, \strong{38}(3), 621-630. \href{https://doi.org/10.1080/03610910802592838}{Muniz and Kibria, 2009}.
+Muniz, G., and Kibria, B. (2009). On Some Ridge Regression Estimators: An Empirical Comparisons. \emph{Communications in Statistics-Simulation and Computation}, \strong{38}(3), 621-630. \doi{10.1080/03610910802592838}.
 
 Muniz, G., Kibria, B., Mansson, K., and Shukur, G. (2012). On developing Ridge Regression Parameters: A Graphical Investigation. \emph{SORT-Statistics and Operations Research Transactions}, \strong{36}(2), 115--138.
 

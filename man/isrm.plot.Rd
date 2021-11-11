@@ -2,7 +2,7 @@
 \alias{isrm.plot}
 
 \title{ISRM and m-scale Plot}
-\description{Plot of m-scale and ISRM against scalar or vector values of biasing parameter \eqn{K}{K} (Vinod, 1976 <\url{http://doi.org/10.2307/2286847}>).
+\description{Plot of m-scale and ISRM against scalar or vector values of biasing parameter \eqn{K}{K} (Vinod, 1976 <\doi{10.1080/01621459.1976.10480955}>).
 }
 
 \usage{isrm.plot(x, \dots)}
@@ -20,7 +20,7 @@ The \code{isrm.plot} function can be used to plot the values of m-scale and ISRM
 \references{
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 
-Vinod, H. (1976). Application of New Ridge Regression Methods to a Study of Bell System Scale Economics. \emph{Journal of the American Statistical Association}, \strong{71}, 835--841. \href{http://doi.org/10.2307/2286847}{Vinod, 1976}.
+Vinod, H. (1976). Application of New Ridge Regression Methods to a Study of Bell System Scale Economics. \emph{Journal of the American Statistical Association}, \strong{71}, 835--841. \doi{10.2307/2286847}.
 }
 
 \author{Muhammad Imdad Ullah, Muhammad Aslam}
