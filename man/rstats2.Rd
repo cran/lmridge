@@ -63,9 +63,12 @@ Lee, W. F. (1979). Model Estimation Using Ridge Regression with the Variane Norm
 \examples{
 data(Hald)
 mod <- lmridge(y~., data=as.data.frame(Hald), K = seq(0,0.2, 0.001) )
+
 rstats2(mod)
+
 }
 
 \keyword{ridge statistics}
 \keyword{ridge PRESS}
 \keyword{ridge effective degrees of freedom}
+

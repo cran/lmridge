@@ -27,7 +27,7 @@ returns a list of matrix for each biasing parameter \eqn{K}{K}:
 \references{
 Cule, E. and De lorio, M. (2012). A semi-Automatic method to guide the choice of ridge parameter in ridge regression.  \emph{arXiv:abs/1205.0686v1 [stat.AP]}.
 
-Hastie, T. and Tibshirani, R. (1990). \emph{Generalized Additive Models}. Chapman \& Hall.
+Hastie, T. and Tibshirani, R. (1990). \emph{Generalized Additive Models}. Chapman and Hall.
 
 Imdad, M. U. \emph{Addressing Linear Regression Models with Correlated Regressors: Some Package Development in R} (Doctoral Thesis, Department of Statistics, Bahauddin Zakariya University, Multan, Pakistan), 2017.
 }

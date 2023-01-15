@@ -105,10 +105,10 @@ rstats1.lmridge <- function(x,...) {
       mse = mser,
       Fv = Fv,
       R2 = R2r,
-      rsigma2=rsigma2,
       adjR2 = adjR2r,
-      eigval = eigval,
-      CN = CN
+      rsigma2=rsigma2,
+      CN = CN,
+      eigval = eigval
     )
 
   class(mses) <- "rstats1"
@@ -123,19 +123,19 @@ print.rstats1 <-
       var = x$var,
       bias2 = x$bias2,
       mse = x$mse,
-      rsigma2 = x$rsigma2,
       Fv   = x$Fv,
       R2    = x$R2,
       adjR2 = x$adjR2,
+      rsigma2 = x$rsigma2,
       CN   = x$CN
     )
     colnames(res) <- c("Variance",
                        "Bias^2",
                        "MSE",
-                       "rsigma2",
                        "F",
                        "R2",
                        "adj-R2",
+                       "rsigma2",
                        "CN")
     #  rownames(res)<-paste("K=", x$K)
     #dimnames(res)<-list(rownames(res, do.NULL = FALSE,K), colnames(res))

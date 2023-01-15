@@ -1,8 +1,8 @@
 lmridge <- function(formula, data, K = 0,
-                    scaling=c("sc", "scaled", "centered"), ...)
+                    scaling=c("sc", "scaled", "non", "centered"), ...)
   UseMethod("lmridge")
 lmridge.default <- function(formula, data,K = 0,
-                            scaling=c("sc", "scaled", "centered"), ...) {
+                            scaling=c("sc", "scaled", "non", "centered"), ...) {
   #    x<-as.matrix(x)
   #    y<-as.matrix(y)
 

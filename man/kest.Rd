@@ -89,11 +89,18 @@ kest(mod)
 ## GCV values
 kest(mod)$GCV
 
-## minimum GCV value
+## minimum GCV value at certain k
 kest(mod)$kGCV
+
+## CV Values
+kest(mod)$CV
+
+## minimum CV value at certain k
+kest(mod)$kCV
 
 ## Hoerl and Kennard (1970)
 kest(mod)$HKB
+
 
 }
 \keyword{ ridge biasing parameter }

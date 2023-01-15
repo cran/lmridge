@@ -57,7 +57,13 @@ Kalivas, J. H., and Palmer, J. (2014). Characterizing multivariate calibration t
 \examples{
 data(Hald)
 mod <- lmridge(y~., data = as.data.frame(Hald), K = seq(0,0.2, 0.005) )
+
 rstats1(mod)
+
+## Getting only Ridge MSE
+rstats1(mod)[3]
+
+rstats1(mod)$mse
 }
 
 \keyword{ridge statistics}

@@ -42,12 +42,14 @@ kest.lmridge <- function(object,...) {
   if (length(GCV) > 0) {
     k <- seq_along(GCV)[GCV == min(GCV)]
     kGCV <- object$K[k]
+    #kGCV <- unlist(GCV)[which.min(unlist(GCV))]
   }
 
   CV <- 1 / n * colSums(press(object) ^ 2)
   if (length(CV) > 0) {
     k <- seq_along(CV)[CV == min(CV)]
     kCV <- object$K[k]
+    #kCV <- unlist(CV)[which.min(unlist(CV))]
   }
 
   mHKB <- ((p - 2) * (sigma2)) / sum(ls ^ 2)     #Thisted , 1976
@@ -62,7 +64,7 @@ kest.lmridge <- function(object,...) {
 
   mj <- sqrt(sigma2 / alphahat ^ 2)
   KM2 <- max(1 / mj)            # Muniz and Kibria 2009
-  KM3 <- max(mj)              # Muniz and Kibria 2009
+  KM3 <- max(mj)                # Muniz and Kibria 2009
   KM4 <- prod(1 / mj) ^ (1 / p)     # Muniz and Kibria 2009
   KM5 <- prod(mj) ^ (1 / p)       # Muniz and Kibria 2009
   KM6 <- median(1 / mj)         # Muniz and Kibria 2009
@@ -76,15 +78,15 @@ kest.lmridge <- function(object,...) {
   KMN11 <- (prod((sqrt(KMNdenom1 / KMNdenom2)))) ^ (1 / p)  #Muniz et al 2012
   KMN12 <-  median(1 / sqrt(KMNdenom1 / KMNdenom2))           #Muniz et al 2012
 
-  KD <- max(cbind(0,HKB - 1 / n * max(vif(object))))               #Dorugae et al 2010
+  KD <- max(cbind(0,HKB - 1 / n * max(vif(object))))        #Dorugae et al 2010
   KAD4 <-  (2 * p / max(EV)) * sum(sigma2 / alphahat ^ 2)
 
-  kesti <- list(mHKB = mHKB, LW = LW, LW76 = Lw1976, CV = CV, kCV = kCV,
-                HKB = HKB, KibAM =KibAM, kGCV = kGCV, DSk = DSk,GCV = GCV,#ls=ls,
-                KibGM = KibGM, KibMED = KibMED, KM2 = KM2, KM3 = KM3, KM4 = KM4,
-                KM5 = KM5, KM6 = KM6, KMN8 = KMN8, KMN9 = KMN9,KMN10 = KMN10,
+  kesti <- list(kCV = kCV, kGCV = kGCV, mHKB = mHKB, LW = LW, LW76 = Lw1976,
+                HKB = HKB, DSk = DSk, KibAM =KibAM, KibGM = KibGM, KibMED = KibMED, #ls=ls,
+                KM2 = KM2, KM3 = KM3, KM4 = KM4, KM5 = KM5, KM6 = KM6,
+                KMN8 = KMN8, KMN9 = KMN9,KMN10 = KMN10,
                 KMN11 = KMN11, KMN12 = KMN12, KD = KD, KAD4 = KAD4,
-                alphahat=alphahat
+                CV = CV, GCV = GCV, alphahat=alphahat
       )#,P=P,xstar=xstar, EV=EV)
 
   class(kesti) <- "klmridge"

@@ -1,5 +1,5 @@
 lmridgeEst <-
-  function(formula=formula, data, K = 0, scaling = c("sc", "scaled", "centered"), ...) {
+  function(formula=formula, data, K = 0, scaling = c("sc", "scaled", "non", "centered"), ...) {
     if (is.null(K)) {
       K <- NULL
     }else{
@@ -43,11 +43,11 @@ lmridgeEst <-
       Xscale <- drop(rep(1, p))
       names(Xscale) <- colnames(X)
 
-    # } else if (scaling=="none"){
-    #   Xscale<-drop(rep(1,p))
-    #   X<-XX
-    #   Y<-y
-    # }
+    } else if (scaling=="non"){
+       Xscale<-drop(rep(1,p))
+       names(Xscale)<-colnames(X)
+       X < x[, -Inter]
+      Y<-y
     } else {
       #Scaling with deviation
       Xscale <-(drop(rep(1 / (n - 1),n) %*% X ^ 2) ^ 0.5) * sqrt(n - 1)

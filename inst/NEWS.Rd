@@ -1,6 +1,16 @@
 \name{NEWS}
 \title{News for Package 'lmrdige'}
 
+\section{Change in lmridge version 1.2.2 (2023-01-14)}{
+\subsection{Improvement}{
+  \itemize{
+    \item Scaling of \code{X} variables is updated in \code{lmridgeEst()} function. Now ridge regression can be done without scaling of \code{X} variables.
+    \item The \code{K}s arranged in order from \code{kest()} function.
+    \item Examples for \code{rstats1()}, \code{kest()}, and \code{lmridgeEst()} are updated.
+  }
+}
+}
+
 \section{Change in lmridge version 1.2.1 (2021-11-10)}{
 \subsection{Improvement}{
   \itemize{
